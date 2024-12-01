@@ -25,35 +25,44 @@
         </div>
     </header>
     <main>
-        <h1 class="hero-name">Deadpool & Wolverine</h1>
-        <div class="hero-detail">
-            <span class="stars"> ★★★★★</span>
-            <span class="imdb-rating">7.7 IMDB</span>
-            <span class="age-restriction">18+</span>
-            <span class="duration">2 h 07 min</span>
-        </div>
-        <p class="description">Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance
-            Authority, but instead recruits a variant of Wolverine to save his universe from extinction.</p>
-        <div>
-            <span>
-                <ul>
-                    <li>
-                        <p>Staring:
-                            <a href="https://tr.wikipedia.org/wiki/Ryan_Reynolds">Ryan Reynolds</a>
-                            <a href="https://tr.wikipedia.org/wiki/Hugh_Jackman">Hugh Jackman</a>
-                            <a href="https://tr.wikipedia.org/wiki/Emma_Corrin">Emma Corrin</a>
-                        </p>
-                    </li>
-                    <li>
-                        <p>Genre: <a href="https://www.imdb.com/search/title/?genres=action">Action</a>
-                            <a href="https://www.imdb.com/search/title/?genres=adventure">Adventure</a>
-                            <a href="https://www.imdb.com/search/title/?genres=comedy">Comedy</a>
-                            <a href="https://www.imdb.com/search/title/?genres=sci-fi">Sci-Fi</a>
-                        </p>
-                    </li>
-                    <li>Tags: Everyone deserves a happy ending.</li>
-                </ul>
-            </span>
+        <div class="hero-video">
+            <img class="hero-img" src="Interfaces/hero-img.jpg" alt="Deadpool & Wolverine">
+            <video class="hero-preview" src="Interfaces/Deadpool & Wolverine .mp4" muted></video>
+            <div class="content">
+                <h1 class="hero-name">Deadpool & Wolverine</h1>
+                <div class="hero-detail">
+                    <span class="stars"> ★★★★★</span>
+                    <span class="imdb-rating">7.7 IMDB</span>
+                    <span class="age-restriction">18+</span>
+                    <span class="duration">2 h 07 min</span>
+                </div>
+                <p class="description">Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance
+                    Authority, but instead recruits a variant of Wolverine to save his universe from extinction.</p>
+                <div>
+
+                    <div class="sgt">
+                        <ul>
+                            <li>
+                                <p>Staring:
+                                    <a href="https://tr.wikipedia.org/wiki/Ryan_Reynolds">Ryan Reynolds</a> -
+                                    <a href="https://tr.wikipedia.org/wiki/Hugh_Jackman">Hugh Jackman</a> -
+                                    <a href="https://tr.wikipedia.org/wiki/Emma_Corrin">Emma Corrin</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Genre: <a href="https://www.imdb.com/search/title/?genres=action">Action</a> -
+                                    <a href="https://www.imdb.com/search/title/?genres=adventure">Adventure</a> -
+                                    <a href="https://www.imdb.com/search/title/?genres=comedy">Comedy</a> -
+                                    <a href="https://www.imdb.com/search/title/?genres=sci-fi">Sci-Fi</a>
+                                </p>
+                            </li>
+                            <li>Tags: Everyone deserves a happy ending.</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#" class="hero-button">Play Now</a>
+            </div>
+
         </div>
     </main>
     <section title="Popular movies" class="popular-movies">
@@ -172,6 +181,20 @@
         </div>
 
     </footer>
+    <script>
+        // Hover için video start-stop kısmı 
+        const heroVideo = document.querySelector('.hero-video');
+        const video = document.querySelector('.hero-preview');
+
+        heroVideo.addEventListener('mouseenter', () => {
+            video.play();
+        });
+
+        heroVideo.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    </script>
 </body>
 
 </html>

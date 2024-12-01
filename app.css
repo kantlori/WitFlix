@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+a {
+    all: unset;
+}
+
+ul {
+    list-style: none;
+}
+
 /* Header Bölümü */
 .header-box {
     display: flex;
@@ -87,4 +95,97 @@
 
 .notifications:hover {
     transform: scale(1.1);
+}
+
+/* Main kısmı */
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+/* Hero resim-video kısmı */
+.hero-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-preview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Hero ayrıntı kısmı */
+.content {
+
+    z-index: 3;
+    color: white;
+    padding: 20px;
+    -webkit-text-stroke: 0.2px black;
+    width: 20%;
+    margin: 20px;
+}
+
+.stars {
+    color: yellow;
+    -webkit-text-stroke: 0.4px black;
+}
+
+.description {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.sgt {
+    font-size: 13px;
+}
+
+.imdb-rating,
+.age-restriction,
+.duration {
+    font-size: 12px;
+    margin: 10px;
+}
+
+/* Play Now button */
+.hero-button {
+    display: inline-block;
+    background-color: rgb(212, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+
+}
+
+/* Hover effect kısmı */
+.hero-video:hover .hero-preview {
+    opacity: 1;
+}
+
+.hero-button:hover {
+    background-color: rgb(162, 0, 0);
+    opacity: 0.9;
+}
+
+
+a:hover {
+    cursor: pointer;
 }
