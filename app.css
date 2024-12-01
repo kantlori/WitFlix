@@ -6,6 +6,7 @@
 
 a {
     all: unset;
+    text-decoration: none;
 }
 
 ul {
@@ -22,19 +23,16 @@ ul {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
 .witflix-logo {
     height: 50px;
     width: auto;
 }
 
-/* Navigasyon menüsü */
 .header-nav {
     display: flex;
     gap: 20px;
 }
 
-/* Header navigasyon menüsü */
 .header-nav a {
     text-decoration: none;
     color: #333;
@@ -45,33 +43,26 @@ ul {
 
 .header-nav a:hover {
     color: red;
-    transition: 0.2s;
 }
 
-/* Header arama bölümü*/
 .search-div {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-/* Header arama kutusu*/
 .search-box {
     padding: 5px 10px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: none;
     outline: none;
-    transition: border-color 0.3s;
     flex-grow: 1;
 }
 
 .search-box:focus {
     border-color: #007BFF;
-    transition: border-color 0.3s;
 }
 
-/* Header arama ikonu*/
 .search-icon {
     height: 18px;
     width: 18px;
@@ -79,7 +70,6 @@ ul {
     margin-left: -40px;
 }
 
-/* Header avatar ve bildirim ikoları*/
 .notifications,
 .avatar {
     height: 25px;
@@ -97,7 +87,7 @@ ul {
     transform: scale(1.1);
 }
 
-/* Main kısmı */
+/* Hero Video */
 .hero-video {
     position: relative;
     width: 100%;
@@ -106,10 +96,8 @@ ul {
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-    border: 1px solid #333;
 }
 
-/* Hero resim-video kısmı */
 .hero-img {
     position: absolute;
     width: 100%;
@@ -128,20 +116,17 @@ ul {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Hero ayrıntı kısmı */
 .content {
-
     z-index: 3;
     color: white;
     padding: 20px;
-    -webkit-text-stroke: 0.2px black;
     width: 20%;
     margin: 20px;
+    -webkit-text-stroke: 5% black;
 }
 
 .stars {
     color: yellow;
-    -webkit-text-stroke: 0.4px black;
 }
 
 .description {
@@ -160,7 +145,6 @@ ul {
     margin: 10px;
 }
 
-/* Play Now button */
 .hero-button {
     display: inline-block;
     background-color: rgb(212, 0, 0);
@@ -171,11 +155,8 @@ ul {
     margin-top: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-
-
 }
 
-/* Hover effect kısmı */
 .hero-video:hover .hero-preview {
     opacity: 1;
 }
@@ -185,7 +166,149 @@ ul {
     opacity: 0.9;
 }
 
-
 a:hover {
     cursor: pointer;
+}
+
+.movie-card:hover .movie-video {
+    opacity: 1;
+}
+
+.movie-card:hover .movie-img {
+    opacity: 0;
+}
+
+/* Section kısmı */
+section {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.movie-card {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.movie-grid {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+    position: relative;
+
+}
+
+.movie-card-content {
+    width: 40%;
+    display: inline;
+    text-align: left;
+    color: whitesmoke;
+    z-index: 3;
+    padding: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+}
+
+.play-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 3;
+    background-color: rgb(212, 0, 0);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.movie-card-content p {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.card-details {
+    display: flex;
+    gap: 20px;
+}
+
+.details-age {
+    display: inline-block;
+    border: 1px solid white;
+    font-size: 11px;
+    text-align: center;
+
+}
+
+.movie-grid::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.movie-grid::-webkit-scrollbar-thumb {
+    background-color: #35353500;
+    border-radius: 10px;
+
+}
+
+.movie-grid::-webkit-scrollbar-track {
+    background-color: #5f555500;
+
+}
+
+.movie-grid::-webkit-scrollbar-track:hover {
+    background-color: #5f55551f;
+
+}
+
+.movie-grid::-webkit-scrollbar-thumb:hover {
+    background-color: #35353515;
+}
+
+.movie-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.movie-card video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.movie-card:hover img {
+    opacity: 0;
+}
+
+.movie-card:hover video {
+    opacity: 1;
+}
+
+
+
+.play-button:hover {
+    background-color: rgb(162, 0, 0);
+    opacity: 0.9;
 }
