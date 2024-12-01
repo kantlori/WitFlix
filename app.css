@@ -408,3 +408,9 @@ footer {
 .section-header h2 {
     margin-bottom: -1.5vh;
 }
+
+/* Karanlık Tema Genel Ayarlar */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
