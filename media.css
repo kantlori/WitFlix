@@ -15,13 +15,6 @@
         flex-direction: column;
     }
 
-    .search-div {
-        display: flex;
-        align-items: center;
-        padding: 2vh;
-        gap: 2.5vw;
-    }
-
     .header-nav {
         flex-wrap: wrap;
         gap: 2vw;
@@ -34,6 +27,7 @@
         border: 1px solid #ccc;
         outline: none;
         flex-grow: 1;
+        margin-right: 30%;
     }
 
     .search-icon {
@@ -131,10 +125,10 @@
     .slider {
         position: absolute;
         cursor: pointer;
-        top: 0.8vw;
-        left: 0.3vw;
-        right: 0.4vw;
-        bottom: 0.5vw;
+        top: 3.5px;
+        left: 1.5px;
+        right: 2px;
+        bottom: 2.5px;
         background-color: #ccc;
         -webkit-transition: .4s;
         transition: .4s;
@@ -145,7 +139,7 @@
         content: "";
         height: 1vh;
         width: 1vh;
-        left: 0.7vh;
+        left: 5px;
         bottom: 0.3vh;
         background-color: white;
         -webkit-transition: .3s;
