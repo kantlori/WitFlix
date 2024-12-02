@@ -18,7 +18,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.1vh 5vw;
+    padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -326,7 +326,7 @@ footer {
     align-items: flex-start;
     background-color: #333;
     color: whitesmoke;
-    padding: 2vh;
+    padding: 20px;
     font-size: 14px;
 
 }
