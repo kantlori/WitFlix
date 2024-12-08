@@ -13,6 +13,10 @@ ul {
     list-style: none;
 }
 
+input {
+    all: initial
+}
+
 /* Header Bölümü */
 .header-box {
     display: flex;
@@ -35,7 +39,7 @@ ul {
     display: flex;
     justify-content: center;
     flex: 1;
-    gap: 10%;
+    gap: 5%;
 }
 
 .header-nav a {
@@ -43,12 +47,12 @@ ul {
     color: #333;
     font-size: 16px;
     font-weight: 500;
-    transition: color 0.3s;
-
+    margin: 0 50px;
 }
 
 .header-nav a:hover {
     color: red;
+    transition: color 0.3s;
 }
 
 .search-div {
@@ -58,22 +62,52 @@ ul {
     margin-right: 5%;
 }
 
+/* Nav'lar icin efekt */
+.header-nav {
+    height: 100%;
+    overflow: hidden;
+}
+
+.header-nav a {
+    padding: 15px 0;
+    animation: 1s slideUp ease alternate .5s;
+    position: relative;
+}
+
+.header-nav a::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    left: 50%;
+    bottom: 10px;
+    background: #bf2e2e;
+    transition: all .1s ease;
+    transform: translateX(-50%);
+}
+
+.header-nav a:hover:before {
+    width: 100%;
+}
+
 .search-box {
-    padding: 1vh;
+    padding: 10px;
     margin-right: 5%;
     font-size: 14px;
     border: 1px solid #ccc;
     flex-grow: 1;
     position: relative;
     left: 10%;
+    border-radius: 5px;
 }
 
 .search-box:focus {
     border-color: #007BFF;
+    transition: 0.9s;
 }
 
 .search-icon {
-    height: 2.5vh;
+    height: 22px;
     cursor: pointer;
     position: relative;
     right: 11%;
@@ -81,8 +115,8 @@ ul {
 
 .notifications,
 .avatar {
-    height: 3.5vh;
-    width: 3.5vh;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
     border-radius: 50%;
     transition: transform 0.2s;
@@ -129,10 +163,11 @@ ul {
 .content {
     z-index: 3;
     color: white;
-    padding: 3vh 2vw;
-    width: 23%;
-    margin: 3vh 2vw;
+    padding: 30px 25px;
+    width: 27%;
+    margin-left: 60px;
     -webkit-text-stroke: 5% black;
+    text-shadow: 1px 1px #000;
 }
 
 .stars {
@@ -159,12 +194,13 @@ ul {
     display: inline-block;
     background-color: rgb(212, 0, 0);
     color: white;
-    padding: 1.5vh 2vw;
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1vh;
+    border-radius: 8px;
+    margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-shadow: none;
 }
 
 .hero-video:hover .hero-preview {
@@ -191,13 +227,12 @@ a:hover {
 /* Section kısmı */
 section {
     padding: 2vh;
-    overflow-x: auto;
 }
 
 .movie-card {
     position: relative;
-    width: 22vw;
-    height: 26vh;
+    width: 400px;
+    height: 240px;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -207,8 +242,6 @@ section {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-
 }
 
 .movie-grid {
@@ -218,7 +251,6 @@ section {
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
     position: relative;
-
 }
 
 .movie-card-content {
@@ -236,35 +268,34 @@ section {
 .play-button {
     position: absolute;
     bottom: 1vh;
-    left: 0.4vw;
+    left: 8px;
     z-index: 3;
     background-color: rgb(212, 0, 0);
     color: white;
-    padding: 0.8vh 1vw;
+    padding: 8px 16px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .movie-card-content p {
-    margin: 0;
-    padding: 0;
+    padding: 2px 4px;
     font-size: 12px;
 }
 
 .card-details {
     display: flex;
-    padding-top: 0.4vh;
-    gap: 0.5vw;
+    padding-top: 8px;
+    gap: 5px;
 }
 
 .details-age {
     display: inline-block;
     border: 1px solid white;
-    font-size: 11px;
     text-align: center;
-
+    padding: 2px 4px;
+    border-radius: 5px;
 }
 
 .movie-grid::-webkit-scrollbar {
