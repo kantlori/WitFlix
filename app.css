@@ -98,7 +98,7 @@ input {
     flex-grow: 1;
     position: relative;
     left: 10%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .search-box:focus {
