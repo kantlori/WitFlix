@@ -17,15 +17,24 @@
             <a href="#">Topic 2</a>
             <a href="#">Topic 3</a>
             <a href="#">Topic 4</a>
-            <div class="dot"></div>
         </nav>
         <div class="search-div">
             <input type="text" placeholder="Search" class="search-box">
             <img src="Interfaces/search-icon.png" alt="Search Icon" class="search-icon">
             <img src="Interfaces/bell-icon.png" alt="Notifications" class="notifications">
-            <img src="Interfaces/Avatar.png" alt="User Avatar" class="avatar">
-        </div>
-        <div class="profile-menu">
+            <div class="avatar-container">
+                <button class="avatar">
+                    <img src="Interfaces/Avatar.png" alt="User Avatar" class="avatar-img">
+                </button>
+                <div class="profile-menu">
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </header>
@@ -298,6 +307,26 @@
                 localStorage.setItem('theme', 'light');
             }
         });
+
+        // Profil menüsü
+        const avatarContainer = document.querySelector('.avatar-container');
+        const profileMenu = document.querySelector('.profile-menu');
+        let timer;
+
+        // Avatar butonuna tıklama
+        avatarContainer.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+            profileMenu.style.display = 'block';
+        });
+
+        // Menüden çıkış
+        avatarContainer.addEventListener('mouseleave', () => {
+            // Fare menüden çıkar çıkmaz 1 saniye bekleyip menüyü kapat
+            timer = setTimeout(() => {
+                profileMenu.style.display = 'none';
+            }, 100);
+        });
+
     </script>
 </body>
 
