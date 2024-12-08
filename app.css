@@ -32,7 +32,6 @@ input {
 .witflix-logo {
     height: 50px;
     width: auto;
-
 }
 
 .header-nav {
@@ -48,6 +47,7 @@ input {
     font-size: 16px;
     font-weight: 500;
     margin: 0 50px;
+    transition: color 0.3s ease;
 }
 
 .header-nav a:hover {
@@ -531,8 +531,8 @@ input:checked+.slider:before {
     color: #ffffff;
 }
 
-.dark-mode header nav a {
-    color: #ff5252
+.dark-mode header nav a:hover {
+    color: #ff5252;
 }
 
 /* Hero Bölümü */
@@ -556,6 +556,16 @@ input:checked+.slider:before {
     background-color: #121212;
 
 }
+
+.dark-mode .search-box {
+    border: 1px solid #1e1e1e;
+}
+
+.dark-mode .search-box:focus {
+    border-color: #007BFF;
+    transition: 0.9s;
+}
+
 
 /* Footer */
 .dark-mode footer {
@@ -618,7 +628,8 @@ input:checked+.slider:before {
     display: none;
     position: absolute;
     top: 50px;
-    right: 0;
+    right: 0px;
+    transform: translateX(50px);
     background: rgb(30, 30, 30);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -628,7 +639,7 @@ input:checked+.slider:before {
 
 .profile-menu ul {
     list-style: none;
-    padding: 10px;
+    padding: 8px 3px;
     margin: 0;
 }
 
@@ -664,3 +675,5 @@ input:checked+.slider:before {
 .avatar-container:hover .profile-menu {
     display: block;
 }
+
+/* ----------------------------- */
