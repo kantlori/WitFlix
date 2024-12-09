@@ -256,78 +256,9 @@
         </label>
 
     </footer>
-    <script>
-        // Hover için video start-stop kısmı 
-
-        const heroVideo = document.querySelector('.hero-video');
-        const video = document.querySelector('.hero-preview');
-
-        heroVideo.addEventListener('mouseenter', () => {
-            video.play();
-        });
-
-        heroVideo.addEventListener('mouseleave', () => {
-            video.pause();
-            video.currentTime = 0;
-        });
-
-        //Movie Cardlar için video start-stop kısmı
-
-        const movieCards = document.querySelectorAll('.movie-card');
-        movieCards.forEach(card => {
-            const video = card.querySelector('video');
-            const playButton = card.querySelector('.play-button');
-
-            card.addEventListener('mouseenter', () => {
-                video.play();
-            });
-
-            card.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
-        });
-        // Checkbox ve body elemanlarını seç
-        const themeCheckbox = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        // Daha önceki tema tercihlerini kontrol et
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeCheckbox.checked = true;
-        }
-        // Checkbox değişimini dinle
-        themeCheckbox.addEventListener('change', () => {
-            if (themeCheckbox.checked) {
-                body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Profil menüsü
-        const avatarContainer = document.querySelector('.avatar-container');
-        const profileMenu = document.querySelector('.profile-menu');
-        let timer;
-
-        // Avatar butonuna tıklama
-        avatarContainer.addEventListener('mouseenter', () => {
-            clearTimeout(timer);
-            profileMenu.style.display = 'block';
-        });
-
-        // Menüden çıkış
-        avatarContainer.addEventListener('mouseleave', () => {
-            // Fare menüden çıkar çıkmaz 1 saniye bekleyip menüyü kapat
-            timer = setTimeout(() => {
-                profileMenu.style.display = 'none';
-            }, 100);
-        });
-
-    </script>
+    <script src="playVideo-hover.js"></script>
+    <script src="profileMenu.js"></script>
+    <script src="darkTheme.js"></script>
 </body>
 
 </html>
